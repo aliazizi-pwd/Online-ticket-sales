@@ -8,9 +8,40 @@
     <link rel="stylesheet" href="./Src/CSS/style.css">
     <link rel="stylesheet" href="./Data/bootstrap.min.css">
 </head>
-<body>
+<body class="background">
     <!-- Get Start Menu App Ticket Sales-->
-    
+    <section class="part-1">
+        <div class="Ticket-panel container bg-body rounded-3 mt-5">
+            <div class="Ticket-panel-main row">
+                <div class="Ticket-access col-xxl-8 col-xl-8 col-lg-6">
+                    <h2 class="title fst-italic fs-5 fw-bold text-start pt-3 ps-2">Ticket Sales</h2>
+                    <p class="text-start text-secondary fst-italic pt-2 ps-2 pb-4">
+                        Please enter the information below and then enter your desired country and city ticket
+                    </p>
+                    <div class="content-input">
+                        <input type="text" placeholder="Enter Name" class="input-name">
+                        <input type="text" placeholder="Enter Family" class="input-family">
+                        <input type="text" placeholder="Enter Phone Number" class="input-phone">
+                        <input type="email" placeholder="Enter Address Email" class="input-email">
+                        <input type="number" placeholder="Enter the number of tickets" class="input-number">
+                        <input type="Date" placeholder="Enter Date" class="input-Date">
+                        <select name="Country" id="country">
+                            <option value="USA">USA</option>
+                            <option value="Iran">Iran</option>
+                            <option value="China">china</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Italy">Italy</option>
+                            <option value="France">France</option>
+                        </select>
+                        <select name="City" id="city">
+                            <option value="">selected Country</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="Ticket-the-show col-xxl-8 col-xl-8 col-lg-6"></div>
+            </div>
+        </div>
+    </section>
     
     <script src="./Data/bootstrap.min.js"></script>
     <script src="./Src/JavaScript/app.js"></script>

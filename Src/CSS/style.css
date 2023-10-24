@@ -3,3 +3,23 @@
      margin: 0;
      box-sizing: border-box;
 }
+/* body-background */
+.background {
+     background-color: #8a2be2;
+}
+/* Ticket-panel */
+.Ticket-panel {
+     width: 100%;
+     height: 80vh;
+}
+
+.Ticket-access {
+     width: 100%;
+     height: 100%;
+}
+.content-input {
+     display: grid;
+     grid-template-columns: repeat(2 , 300px);
+     grid-template-rows: repeat(2 , 1fr);
+     gap: 20px;
+}
