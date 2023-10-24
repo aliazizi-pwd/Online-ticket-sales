@@ -14,3 +14,23 @@ const selectCity = $.getElementById("city");
 const btnTicketSales = $.querySelector(".btn-ticket-Sales");
 const btnClearAll = $.querySelector(".btn-clearAll");
 
+// todo : Write DataBase
+const country = {
+     Usa : ['New York','Los Angeles','Chicago','Houston','San Antonio','San Diego'],
+     Iran : ['Tehran','Isfahan','Fars','Qom','Hamadan','shiraz'],
+     Turkey : ['Konya','Mardin','Izmir','Trabzon','Fethiye','Istanbul'],
+     Canada : ['Toronto','Montreal','Calgary','Edmonton','Ottawa','Winnipeg'],
+     Italy : ['Rome','Milan','Naples','Turin','Bologna','Florence'],
+     France : ['Paris','Nice','Lyon','Lille','Marseille','Bordeaux'],
+};
+
+
+selectCountry.addEventListener("change" , () => {
+     let valueChange = selectCountry.value;
+     let dataBaseValues = country[valueChange];
+     
+     selectCity.innerHTML = '';
+     dataBaseValues.forEach((city) => {
+          selectCity.innerHTML += `<option>${city}</option>`;
+     });
+});
