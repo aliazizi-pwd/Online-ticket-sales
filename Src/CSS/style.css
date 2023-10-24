@@ -10,7 +10,7 @@
 /* Ticket-panel */
 .Ticket-panel {
      width: 100%;
-     height: 80vh;
+     height: 90vh;
 }
 
 .Ticket-access {
@@ -19,7 +19,7 @@
 }
 .content-input {
      display: grid;
-     grid-template-columns: repeat(2 , 300px);
+     grid-template-columns: repeat(2 , 1fr);
      grid-template-rows: repeat(2 , 1fr);
      gap: 20px;
 }
@@ -33,4 +33,3 @@ input , select {
      border-radius: 5px;
      padding: 5px;
 }
-
