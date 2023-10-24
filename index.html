@@ -7,11 +7,12 @@
     <link rel="image icon" href="./public/Image/two-yellow-tickets.jpg">
     <link rel="stylesheet" href="./Src/CSS/style.css">
     <link rel="stylesheet" href="./Data/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" integrity="sha512-gMjQeDaELJ0ryCI+FtItusU9MkAifCZcGq789FrzkiM49D8lbDhoaUaIX4ASU187wofMNlgBJ4ckbrXM9sE6Pg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="background">
     <!-- Get Start Menu App Ticket Sales-->
     <section class="part-1">
-        <div class="Ticket-panel container bg-body rounded-3 mt-5">
+        <div class="Ticket-panel container bg-body rounded-3 mt-5 position-relative">
             <div class="Ticket-panel-main row">
                 <div class="Ticket-access col-xxl-8 col-xl-8 col-lg-6">
                     <h2 class="title fst-italic fs-5 fw-bold text-start pt-3 ps-2">Ticket Sales</h2>
@@ -37,8 +38,16 @@
                             <option value="">selected Country</option>
                         </select>
                     </div>
+                    <div class="controller-user d-flex flex-row justify-content-start align-items-center position-absolute bottom-0 mb-3">
+                        <button class="btn-ticket-Sales btn bg-success text-light">Ticket Sales <i class="fa fa-shopping-bag"></i></button>
+                        <button class="btn-clearAll btn bg-danger text-light ms-2">ClearAll <i class="fa fa-trash"></i></button>
+                    </div>
                 </div>
-                <div class="Ticket-the-show col-xxl-8 col-xl-8 col-lg-6"></div>
+                <!-- Adding Item's -->
+                <div class="Ticket-the-show col-xxl-4 col-xl-4 col-lg-6">
+                    <h2 class="title fst-italic fs-5 fw-bold text-center pt-3">Show people</h2>
+                    <p class="status-Buy text-center text-secondary fst-italic pt-2 pb-4">No one has bought tickets yet</p>
+                </div>
             </div>
         </div>
     </section>

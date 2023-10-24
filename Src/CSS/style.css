@@ -23,3 +23,14 @@
      grid-template-rows: repeat(2 , 1fr);
      gap: 20px;
 }
+
+input , select {
+     background: none;
+     border: none;
+     outline: none;
+     background: #ffff;
+     border: 1px solid silver;
+     border-radius: 5px;
+     padding: 5px;
+}
+
