@@ -9,6 +9,7 @@ const textEmail = $.querySelector(".input-email");
 const textPrice = $.querySelector(".input-price");
 const textModal = $.querySelector(".modal-text");
 const ticketShow = $.querySelector(".Ticket-the-show");
+const statusBuy = $.querySelector(".status-Buy");
 // todo Selected (select : City and Country) Element HTML DOM :-
 const selectCountry = $.getElementById("country");
 const selectCity = $.getElementById("city");
@@ -48,6 +49,8 @@ selectCountry.addEventListener("change" , () => {
      
 });
 
+let valuesObjectData;
+let row = 0;
 let isDecision = true;
 const inputAll = $.querySelectorAll("input");
 btnTicketSales.addEventListener("click" , getAddPeople);
@@ -60,7 +63,53 @@ function getAddPeople () {
      });
 
      if (isDecision) {
-          // 
+          // True
+          // Change Status...
+          statusBuy.innerHTML = "You can reach people who bought tickets";
+          statusBuy.classList.remove("text-danger");
+          statusBuy.classList.add("text-success");
+
+          row++;
+          const post = $.createElement("div");
+          post.classList.add("item-people");
+          
+          const objectDataList = {
+               id : row,
+               name : textName.value,
+               family : textFamily.value,
+               country : selectCountry.value,
+               city : selectCity.value,
+               price : textPrice.value, 
+          };
+          
+          valuesObjectData = Object.values(objectDataList);
+
+          const postInsetOne = $.createElement("div");
+
+          const postInsetTwo = $.createElement("div");
+
+
+          const postUL = $.createElement("ul");
+          postUL.classList.add("post-inset");
+
+          const btnCheck = $.createElement("button");
+          btnCheck.innerHTML = `<i class='fa fa-check'></i>`;
+          btnCheck.classList.add("complete");
+
+          const btnTrash = $.createElement("button");
+          btnTrash.innerHTML = `<i class='fa fa-trash'></i>`;
+          btnTrash.classList.add("trash");
+
+          valuesObjectData.forEach( (data) => {
+               postUL.innerHTML += `<li>${data}</li>`;
+          });  
+
+          postInsetOne.appendChild(postUL);
+          postInsetTwo.appendChild(btnCheck);
+          postInsetTwo.appendChild(btnTrash);
+          post.appendChild(postInsetOne);
+          post.appendChild(postInsetTwo);
+          ticketShow.appendChild(post);
      }
 
      
