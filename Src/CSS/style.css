@@ -82,3 +82,9 @@ input , select {
      list-style-type: none;
      padding-top: 10px;
 }
+
+.tiked {
+     background-color: #000;
+     color: #dc143c;
+     text-decoration: line-through;
+}

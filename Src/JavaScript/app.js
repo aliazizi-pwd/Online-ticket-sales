@@ -16,6 +16,8 @@ const selectCity = $.getElementById("city");
 // todo Selected Button's Element HTML DOM :-
 const btnTicketSales = $.querySelector(".btn-ticket-Sales");
 const btnClearAll = $.querySelector(".btn-clearAll");
+// todo Check list People
+
 
 // todo : Write DataBase
 const country = {
@@ -85,9 +87,7 @@ function getAddPeople () {
           valuesObjectData = Object.values(objectDataList);
 
           const postInsetOne = $.createElement("div");
-
           const postInsetTwo = $.createElement("div");
-
 
           const postUL = $.createElement("ul");
           postUL.classList.add("post-inset");
@@ -117,3 +117,16 @@ function getAddPeople () {
           textModal.innerText = "";
      } , 3000);
 }
+
+
+// addEvent Click form show People and Changed list
+ticketShow.addEventListener("click" , getChangeListPeople);
+
+function getChangeListPeople (e) {
+     let targetUser = e.target;
+     let parentItem = targetUser.parentElement.parentElement;
+     if (targetUser.classList.contains("complete") === true) {
+          parentItem.classList.toggle("tiked");
+     }
+}
+
