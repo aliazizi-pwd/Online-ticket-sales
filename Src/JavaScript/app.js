@@ -4,11 +4,11 @@ let $ = document;
 const textName = $.querySelector(".input-name");
 const textFamily = $.querySelector(".input-family");
 const textPhone = $.querySelector(".input-phone");
-const textNumber = $.querySelector("input-number");
+const textNumber = $.querySelector(".input-number");
 const textEmail = $.querySelector(".input-email");
 const textPrice = $.querySelector(".input-price");
-const textDateWent = $.querySelector(".input-Date-Went");
-const textDateReturn = $.querySelector(".input-Date-Return");
+const textModal = $.querySelector(".modal-text");
+const ticketShow = $.querySelector(".Ticket-the-show");
 // todo Selected (select : City and Country) Element HTML DOM :-
 const selectCountry = $.getElementById("country");
 const selectCity = $.getElementById("city");
@@ -45,5 +45,26 @@ selectCountry.addEventListener("change" , () => {
      });
 
      textPrice.value = `${priceCountry[valueChange]}$`;
-
+     
 });
+
+let isDecision = true;
+const inputAll = $.querySelectorAll("input");
+btnTicketSales.addEventListener("click" , getAddPeople);
+function getAddPeople () {
+     inputAll.forEach ( (inputs) => {
+          if (inputs.value === "") {
+               textModal.innerText = "Please type all requested information";
+               isDecision = false;
+          }
+     });
+
+     if (isDecision) {
+          // 
+     }
+
+     
+     setTimeout ( () => {
+          textModal.innerText = "";
+     } , 3000);
+}
