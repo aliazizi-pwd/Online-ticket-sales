@@ -41,14 +41,20 @@ const priceCountry = {
 selectCountry.addEventListener("change" , () => {
      let valueChange = selectCountry.value;
      let dataBaseValues = country[valueChange];
-          
-     selectCity.innerHTML = '';
-     dataBaseValues.forEach((city) => {
-          selectCity.innerHTML += `<option>${city}</option>`;
-     });
 
-     textPrice.value = `${priceCountry[valueChange]}$`;
+     if (selectCountry.value === "select Country") {
+          selectCity.innerHTML = "";
+          selectCity.innerHTML = `<option>select City</option>`;
+          textPrice.value = "";
+     } else {
+          selectCity.innerHTML = '';
+          dataBaseValues.forEach((city) => {
+               selectCity.innerHTML += `<option>${city}</option>`;
+          });
      
+          let prices = priceCountry[valueChange][0] * textNumber.value;
+          textPrice.value = `${prices}$`;    
+     }   
 });
 
 let valuesObjectData;
@@ -79,7 +85,6 @@ function getAddPeople () {
                id : row,
                name : textName.value,
                family : textFamily.value,
-               country : selectCountry.value,
                city : selectCity.value,
                price : textPrice.value, 
           };
@@ -91,8 +96,8 @@ function getAddPeople () {
           textNumber.value = "";
           textPrice.value = "";
           textPhone.value = "";
-          selectCity.innerHTML = `<option>selected City</option>`;
-          
+          selectCity.innerHTML = `<option>select City</option>`;
+
           valuesObjectData = Object.values(objectDataList);
 
           const postInsetOne = $.createElement("div");
@@ -161,3 +166,15 @@ function getLocalStorage (list) {
      }
      localStorage.setItem(JSON.stringify(list) , data);
 }
+
+
+// ClearAll
+btnClearAll.addEventListener("click" , () => {
+          textName.value = "";
+          textFamily.value = "";
+          textEmail.value = "";
+          textNumber.value = "";
+          textPrice.value = "";
+          textPhone.value = "";
+          selectCity.innerHTML = `<option>select City</option>`;
+});
