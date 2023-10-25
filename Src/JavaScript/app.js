@@ -124,6 +124,8 @@ function getAddPeople () {
      setTimeout ( () => {
           textModal.innerText = "";
      } , 3000);
+
+     getLocalStorage(valuesObjectData);
 }
 
 
@@ -149,6 +151,13 @@ function getChangeListPeople (e) {
      }
 }
 
-
-
-
+// localStorage save data...
+function getLocalStorage (list) {
+     let data;
+     if (localStorage.getItem(data) === null) {
+          data = [];
+     } else {
+          data.push(list);
+     }
+     localStorage.setItem(JSON.stringify(list) , data);
+}
