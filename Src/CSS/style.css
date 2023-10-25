@@ -67,7 +67,7 @@ input , select {
 .trash {
      width: 40px;
      height: 35px;
-     margin-right: 10px;
+     margin-right: 5px;
      background-color: #dc143c;
      color: #fff;
      outline: none;

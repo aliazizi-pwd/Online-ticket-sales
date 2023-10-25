@@ -120,13 +120,18 @@ function getAddPeople () {
 
 
 // addEvent Click form show People and Changed list
+let iscomplete = false;
+let isTrash = false;
 ticketShow.addEventListener("click" , getChangeListPeople);
-
 function getChangeListPeople (e) {
      let targetUser = e.target;
      let parentItem = targetUser.parentElement.parentElement;
      if (targetUser.classList.contains("complete") === true) {
           parentItem.classList.toggle("tiked");
+          iscomplete = true;
+     } else if (targetUser.classList.contains("trash") === true) {
+          parentItem.remove();
+          isTrash = true;
      }
 }
 
