@@ -83,6 +83,15 @@ function getAddPeople () {
                city : selectCity.value,
                price : textPrice.value, 
           };
+
+          // Delete values input
+          textName.value = "";
+          textFamily.value = "";
+          textEmail.value = "";
+          textNumber.value = "";
+          textPrice.value = "";
+          textPhone.value = "";
+          selectCity.innerHTML = `<option>selected City</option>`;
           
           valuesObjectData = Object.values(objectDataList);
 
@@ -112,7 +121,6 @@ function getAddPeople () {
           ticketShow.appendChild(post);
      }
 
-     
      setTimeout ( () => {
           textModal.innerText = "";
      } , 3000);
@@ -132,6 +140,15 @@ function getChangeListPeople (e) {
      } else if (targetUser.classList.contains("trash") === true) {
           parentItem.remove();
           isTrash = true;
+          row--;
+          if (row === 0) {
+               statusBuy.innerHTML = "No one has bought tickets yet";
+               statusBuy.classList.remove("text-success");
+               statusBuy.classList.add("text-danger");
+          }
      }
 }
+
+
+
 
