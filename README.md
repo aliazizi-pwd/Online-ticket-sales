@@ -16,4 +16,5 @@ Online ticket sales , An exercise to review JavaScript content and work towards 
   - [] - Ability to save in local storage
 
 ## Preview 
-<img width=100% src="./public/Image/demo.gif.mp4">
+
+<video src="./public/Image/demo.gif.mp4"></video>
